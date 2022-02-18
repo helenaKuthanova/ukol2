@@ -12,8 +12,30 @@
     <button onclick="odstavecZcervena()">
         Červený po kliknutí
     </button>
+
     <button onclick="zvetsiPismo()">
         Větší po kliknutí
+    </button>
+
+    <audio id="zvukovaStopa" src="audio\dingdingdang.mp3" preload="auto"></audio>
+    <button onclick="prehrajAudio()">
+        Play
+    </button>
+    <button onclick="zastavAudio()">
+        Pause
+    </button>
+    <button onclick="hrajOdZacatku()">
+        Re-play
+    </button>
+    
+    <button onclick="nastavHlasitost(0)">
+        Vol 0
+    </button>
+    <button onclick="nastavHlasitost(0.5)">
+        Vol 0.5
+    </button>
+    <button onclick="nastavHlasitost(1)">
+        Vol 1
     </button>
     <script src="app.js"></script>
 </body>
