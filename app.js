@@ -1,16 +1,16 @@
 function priNajetiMysiZtucni() {
-    let odstavec = document.querySelector("p");
+    let odstavec = document.querySelector("#palindrom");
     odstavec.classList.toggle("tucny");
 }
 
 function odstavecZcervena() {
-    let odstavec = document.querySelector("p");
+    let odstavec = document.querySelector("#palindrom");
     odstavec.classList.toggle("cerveny");
 }
 
 let velikost = 16
-function zvetsiPismo() {
-    let odstavec = document.querySelector("p");
+function zvetsPismo() {
+    let odstavec = document.querySelector("#palindrom");
     velikost++;
     odstavec.style.fontSize=velikost + "px";
 }
@@ -26,12 +26,12 @@ function zastavAudio() {
 }
 
 function hrajOdZacatku() {
-    let zvuk = document.getElementById("zvukovaStopa")
+    let zvuk = document.getElementById("zvukovaStopa");
     zvuk.currentTime = 0;
-    zvuk.play()
+    zvuk.play();
 }
 
 function nastavHlasitost(hlasitost) {
-    let zvuk = document.getElementById("zvukovaStopa")
-    zvuk.volume = hlasitost
+    let zvuk = document.getElementById("zvukovaStopa");
+    zvuk.volume = hlasitost;
 }
