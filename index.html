@@ -7,34 +7,47 @@
 </head>
 
 <body>
-    <p id="palindrom" onmouseover="priNajetiMysiZtucni()">Báře jede jeřáb. Kuna nese nanuk.</p>
+    <p id="palindrom" 
+    onmouseover="this.style.fontWeight='bold';"
+    onmouseout="this.style.fontWeight='normal';"
+    >Báře jede jeřáb. Kuna nese nanuk.</p>
+<!-- jednoduchá změna stylu rovnou v html (JS volám rovnou v atributu), nemusím na to psát funkci;
+    jelikož mám JS kód přímo na daném elementu, můžu zavolat THIS (odkazuje na element, který danou událost vyvolal) -->
 
-    <button onclick="odstavecZcervena()">
+<!-- toto mi zčervená nápis na tlačítku: onclick="this.style.color='red';" -->
+<!-- vystavuji dva nové elementy - tlačítka -->
+<!-- v parametru dám #, protože používám querySelector, tedy musím říct, že předávám ID (lze použít i třída .) -->
+    <button onclick="odstavecZcervena('#palindrom')">
         Červený po kliknutí
     </button>
 
-    <button onclick="zvetsPismo()">
+<!-- nedávám v parametru #, protože používám fci getElementById, může jít tedy jedině o ID -->
+<!-- vytáhnu změnu do parametru a můžu ji jednoduše měnit -->
+    <button onclick="zvetsPismo('palindrom', 1)">
         Větší po kliknutí
+    </button>
+    <button onclick="zvetsPismo('palindrom', 20)">
+        Mnohem větší po kliknutí
     </button>
 
     <audio id="zvukovaStopa" src="audio\dingdingdang.mp3" preload="auto"></audio>
     <button onclick="prehrajAudio()">
         Play
     </button>
-    <button onclick="zastavAudio()">
+    <button onclick="zastavAudio('#zvukovaStopa')">
         Pause
     </button>
-    <button onclick="hrajOdZacatku()">
+    <button onclick="hrajOdZacatku('#zvukovaStopa')">
         Re-play
     </button>
 
-    <button onclick="nastavHlasitost(0)">
+    <button onclick="nastavHlasitost('#zvukovaStopa', 0)">
         Vol 0
     </button>
-    <button onclick="nastavHlasitost(0.5)">
+    <button onclick="nastavHlasitost('#zvukovaStopa', 0.5)">
         Vol 0.5
     </button>
-    <button onclick="nastavHlasitost(1)">
+    <button onclick="nastavHlasitost('#zvukovaStopa', 1)">
         Vol 1
     </button>
     <script src="app.js"></script>
